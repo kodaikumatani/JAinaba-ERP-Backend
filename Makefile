@@ -3,7 +3,7 @@ up:
 composer:
 	./vendor/bin/sail composer update
 stan:
-	./vendor/bin/phpstan analyse -c phpstan.neon
+	./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G
 phpcs:
 	./vendor/bin/phpcs .
 phpcbf:

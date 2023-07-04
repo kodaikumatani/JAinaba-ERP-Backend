@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id();
             $table->dateTime('date');
             $table->unsignedInteger('hour');
-            $table->foreignId('user_id')
-                ->constrained('users')
-                ->onDelete('cascade');
             $table->foreignId('store_id')
                 ->constrained('stores')
                 ->onDelete('cascade');
@@ -26,7 +23,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->integer('quantity');
             $table->integer('store_total')->nullable();
-            $table->unique(['date', 'user_id', 'store_id', 'product_id']);
+            $table->unique(['date', 'store_id', 'product_id']);
             $table->timestamps();
         });
     }

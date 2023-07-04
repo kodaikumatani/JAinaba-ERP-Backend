@@ -18,7 +18,6 @@ class StoreFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::query()->orderBy('id')->first()->value('id'),
             'name' => fake()->company(),
         ];
     }

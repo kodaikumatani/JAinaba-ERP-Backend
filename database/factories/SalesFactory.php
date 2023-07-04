@@ -23,7 +23,6 @@ class SalesFactory extends Factory
         return [
             'date' => $date->format("Y-m-d H:i:s"),
             'hour' => $date->format("H"),
-            'user_id' => User::query()->orderBy('id')->first()->value('id'),
             'store_id' => fake()->randomElement(Store::query()->pluck('id')),
             'product_id' => fake()->randomElement(Product::query()->pluck('id')),
             'quantity' => rand(0, 5),

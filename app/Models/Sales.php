@@ -17,7 +17,6 @@ class Sales extends Model
     protected $fillable = [
         'date',
         'hour',
-        'user_id',
         'store_id',
         'product_id',
         'quantity',
@@ -32,7 +31,6 @@ class Sales extends Model
     protected $casts = [
         'date' => 'date',
         'hour' => 'integer',
-        'user_id' => 'integer',
         'store_id' => 'integer',
         'product_id' => 'integer',
         'qunatity' => 'integer',

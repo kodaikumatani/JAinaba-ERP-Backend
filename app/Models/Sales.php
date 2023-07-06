@@ -5,6 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $id
+ * @property $dateTime
+ * @property $hour
+ * @property $user_id
+ * @property $store_id
+ * @property $product_id
+ * @property $quantity
+ * @property $store_total
+ */
 class Sales extends Model
 {
     use HasFactory;
@@ -37,6 +47,14 @@ class Sales extends Model
         'product_id' => 'integer',
         'qunatity' => 'integer',
         'store_total' => 'integer',
-        'password' => 'hashed',
     ];
+
+    /**
+     * @param string $date
+     * @return array<Sales>
+     */
+    public function FindByDate($date): array
+    {
+        return $this->whereDate('dateTime', $date)->get();
+    }
 }

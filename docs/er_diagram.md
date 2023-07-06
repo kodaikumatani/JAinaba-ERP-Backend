@@ -23,8 +23,9 @@ erDiagram
         bigint id PK
         datetime dateTime "集計時刻"
         uint hour "集計時間"
-        references store_id FK
-        references product_id FK
+        uint user_id FK
+        uint store_id FK
+        uint product_id FK
         uint quantity "数量"
         timestamp created_at
         timestamp deleted_at

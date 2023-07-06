@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Store;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,6 +23,7 @@ class SalesFactory extends Factory
         return [
             'date' => $date->format("Y-m-d H:i:s"),
             'hour' => $date->format("H"),
+            'user_id' => User::query()->orderBy('id')->first()->value('id'),
             'store_id' => fake()->randomElement(Store::query()->pluck('id')),
             'product_id' => fake()->randomElement(Product::query()->pluck('id')),
             'quantity' => rand(0, 5),

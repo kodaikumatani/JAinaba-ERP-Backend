@@ -15,7 +15,7 @@ class Sales extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'date',
+        'dateTime',
         'hour',
         'user_id',
         'store_id',
@@ -30,7 +30,7 @@ class Sales extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'date' => 'date',
+        'dateTime' => 'date',
         'hour' => 'integer',
         'user_id' => 'integer',
         'store_id' => 'integer',

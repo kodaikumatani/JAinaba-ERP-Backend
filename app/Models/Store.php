@@ -16,7 +16,6 @@ class Store extends Model
      */
     protected $fillable = [
         'name',
-        'user_id',
     ];
 
     /**
@@ -26,6 +25,5 @@ class Store extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'user_id' => 'integer',
     ];
 }

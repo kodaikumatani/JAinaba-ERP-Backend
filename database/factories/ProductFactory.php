@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +18,6 @@ class ProductFactory extends Factory
     {
         return [
             'name' => fake()->safeColorName(),
-            'user_id' => User::query()->orderBy('id')->first()->value('id'),
             'price' => fake()->randomElement($array = [200, 300, 500]),
         ];
     }

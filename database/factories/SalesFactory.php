@@ -21,7 +21,7 @@ class SalesFactory extends Factory
     {
         $date = fake()->unique()->dateTimeBetween($startDate = '-1 years', $endDate = '+1 years');
         return [
-            'date' => $date->format("Y-m-d H:i:s"),
+            'dateTime' => $date->format("Y-m-d H:i:s"),
             'hour' => $date->format("H"),
             'user_id' => User::query()->orderBy('id')->first()->value('id'),
             'store_id' => fake()->randomElement(Store::query()->pluck('id')),

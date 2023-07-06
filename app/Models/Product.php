@@ -16,7 +16,6 @@ class Product extends Model
      */
     protected $fillable = [
         'name',
-        'user_id',
         'price',
     ];
 
@@ -27,7 +26,6 @@ class Product extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'user_id' => 'integer',
         'price' => 'integer',
     ];
 }

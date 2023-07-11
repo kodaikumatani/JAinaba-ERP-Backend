@@ -17,7 +17,7 @@ class SalesController extends Controller
         Sales $sales,
         ShowByDateAction $action
     ): Collection {
-        $date = new Carbon(strtotime($year . '/' . $month . '/' . $day));
+        $date = Carbon::create($year, $month, $day);
         return $action($sales, $date);
     }
 }

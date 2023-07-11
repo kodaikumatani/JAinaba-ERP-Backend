@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Sales;
 use App\UseCases\Sales\ShowByDateAction;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class SalesController extends Controller
 {

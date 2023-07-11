@@ -6,3 +6,4 @@ APIとBatchを提供します。
 - [ユースケース](./docs/usecase_diagram.md)
 - [ER図](./docs/er_diagram.md)
 - [シーケンス図](./docs/sequence_diagram.md)
+- [swagger](./docs/api.yaml)

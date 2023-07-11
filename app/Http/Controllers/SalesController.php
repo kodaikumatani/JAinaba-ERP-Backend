@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sales;
-use App\UseCase\Sales\ShowByDateAction;
+use App\UseCases\Sales\ShowByDateAction;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
 {
     public function showByDate(
-        int $year, 
-        int $month, 
-        int $day, 
+        int $year,
+        int $month,
+        int $day,
         Sales $sales,
         ShowByDateAction $action
-    ): Sales
-    {
-        $date = $year . '/' . $month . '/' . $day;
+    ): array {
+        $date = date('Y-m-d', strtotime($year . '/' . $month . '/' . $day));
         return $action($sales, $date);
     }
 }

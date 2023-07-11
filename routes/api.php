@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sales/daily/{year}/{month}/{day}', [SalesController::class, 'showDate']);
+Route::get('/sales/daily/{year}/{month}/{day}', [SalesController::class, 'showByDate']);

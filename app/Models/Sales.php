@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id
- * @property $dateTime
- * @property $hour
- * @property $user_id
- * @property $store_id
- * @property $product_id
- * @property $quantity
- * @property $store_total
+ * @property string $dateTime
+ * @property int $hour
+ * @property int $user_id
+ * @property int $store_id
+ * @property int $product_id
+ * @property int $quantity
+ * @property int $store_total
  */
 class Sales extends Model
 {
@@ -45,16 +45,16 @@ class Sales extends Model
         'user_id' => 'integer',
         'store_id' => 'integer',
         'product_id' => 'integer',
-        'qunatity' => 'integer',
+        'quantity' => 'integer',
         'store_total' => 'integer',
     ];
 
     /**
      * @param string $date
-     * @return array<Sales>
+     * @return Sales[]
      */
-    public function FindByDate($date): array
+    public function FindByDate(string $date): array
     {
-        return $this->whereDate('dateTime', $date)->get();
+        return self::query()->whereDate('dateTime', $date)->get();
     }
 }

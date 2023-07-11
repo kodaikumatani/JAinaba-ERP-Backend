@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -50,10 +52,10 @@ class Sales extends Model
     ];
 
     /**
-     * @param string $date
-     * @return Sales[]
+     * @param Carbon $date
+     * @return Collection
      */
-    public function FindByDate(string $date): array
+    public function FindByDate(Carbon $date): Collection
     {
         return self::query()->whereDate('dateTime', $date)->get();
     }

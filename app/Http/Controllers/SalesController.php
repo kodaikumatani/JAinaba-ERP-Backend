@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sales;
 use App\UseCases\Sales\ShowByDateAction;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
@@ -14,8 +16,8 @@ class SalesController extends Controller
         int $day,
         Sales $sales,
         ShowByDateAction $action
-    ): array {
-        $date = date('Y-m-d', strtotime($year . '/' . $month . '/' . $day));
+    ): Collection {
+        $date = new Carbon(strtotime($year . '/' . $month . '/' . $day));
         return $action($sales, $date);
     }
 }

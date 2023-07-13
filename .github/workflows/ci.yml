@@ -12,6 +12,8 @@ jobs:
       with:
         path: /tmp/composer-cache
         key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+    - name: Setup Laravel
+      run: cp .env.example .env
     - uses: php-actions/composer@v6 # or alternative dependency management
     - uses: php-actions/phpstan@v3
       with:

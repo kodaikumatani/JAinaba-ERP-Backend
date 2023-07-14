@@ -28,7 +28,8 @@ jobs:
         testMode: true
         configPath: "pint.json"
         pintVersion: 1.10.4
-    - uses: php-actions/phpunit@v3
+    - name: Test
+      uses: php-actions/phpunit@v3
       with:
         configuration: "phpunit.xml"
         memory_limit: "256M"

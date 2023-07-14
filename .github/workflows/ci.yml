@@ -28,7 +28,6 @@ jobs:
         testMode: true
         configPath: "pint.json"
         pintVersion: 1.10.4
-        onlyDirty: true
     - uses: php-actions/phpunit@v3
       with:
         configuration: "phpunit.xml"

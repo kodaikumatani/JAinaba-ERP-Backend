@@ -32,7 +32,7 @@ class Sales extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'dateTime' => 'date',
+        'dateTime' => 'immutable_datetime',
         'hour' => 'integer',
         'user_id' => 'integer',
         'store_id' => 'integer',

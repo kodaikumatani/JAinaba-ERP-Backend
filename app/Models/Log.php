@@ -33,7 +33,7 @@ class Log extends Model
     * @var array<string, string>
     */
     protected $casts = [
-        'dateTime' => 'datetime',
+        'dateTime' => 'immutable_datetime',
         'producer_code' => 'integer',
         'producer' => 'string',
         'store' => 'string',

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\UseCases\Sales;
+namespace App\UseCases\Day;
 
 use App\Models\Sales;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
-class ShowByDateAction
+class ShowSalesAction
 {
     /**
      * @param Sales $sales
@@ -15,6 +15,8 @@ class ShowByDateAction
      */
     public function __invoke(Sales $sales, Carbon $date): Collection
     {
-        return $sales->FindByDate($date);
+        return $sales->query()
+            ->whereDate('dateTime', $date)
+            ->get();
     }
 }

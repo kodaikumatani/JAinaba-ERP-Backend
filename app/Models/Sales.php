@@ -2,21 +2,9 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 
-/**
- * @property int $id
- * @property string $dateTime
- * @property int $hour
- * @property int $user_id
- * @property int $store_id
- * @property int $product_id
- * @property int $quantity
- * @property int $store_total
- */
 class Sales extends Model
 {
     use HasFactory;
@@ -50,13 +38,4 @@ class Sales extends Model
         'quantity' => 'integer',
         'store_total' => 'integer',
     ];
-
-    /**
-     * @param Carbon $date
-     * @return Collection
-     */
-    public function FindByDate(Carbon $date): Collection
-    {
-        return self::query()->whereDate('dateTime', $date)->get();
-    }
 }

@@ -18,7 +18,7 @@ class ShowSalesAction
     public function __invoke(Sales $sales, Carbon $date): Collection
     {
         return $sales->query()
-            ->whereDate('dateTime', $date)
+            ->whereDate('dateTime', '=', $date)
             ->get();
     }
 }

@@ -20,7 +20,7 @@ class ShowStoreAction
     public function __invoke(Sales $sales, Store $store, Carbon $date): Collection
     {
         $ids = $sales->query()
-            ->whereDate('dateTime', $date)
+            ->whereDate('dateTime', '=', $date)
             ->pluck('store_id');
 
         return $store->query()

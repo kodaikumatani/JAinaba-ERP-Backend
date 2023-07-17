@@ -35,9 +35,6 @@ erDiagram
         bigint id PK
         uint producer_code "生産者コード"
         string name "生産者名"
-        string email "Eメール"
-        timestamp email_verified_at
-        string password
         timestamp created_at
         timestamp deleted_at
     }

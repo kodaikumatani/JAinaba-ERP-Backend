@@ -27,11 +27,11 @@ class Log extends Model
         'store_total'
     ];
 
-     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    /**
+    * The attributes that should be cast.
+    *
+    * @var array<string, string>
+    */
     protected $casts = [
         'dateTime' => 'datetime',
         'producer_code' => 'integer',

@@ -11,13 +11,12 @@ use Illuminate\Support\Collection;
 class ShowSalesAction
 {
     /**
-     * @param Sales $sales
      * @param Carbon $date
      * @return Collection
      */
-    public function __invoke(Sales $sales, Carbon $date): Collection
+    public function __invoke(Carbon $date): Collection
     {
-        return $sales->query()
+        return Sales::query()
             ->whereDate('dateTime', '=', $date)
             ->get();
     }

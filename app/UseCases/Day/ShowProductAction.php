@@ -12,18 +12,16 @@ use Illuminate\Support\Collection;
 class ShowProductAction
 {
     /**
-     * @param Sales $sales
-     * @param Product $product
      * @param Carbon $date
      * @return Collection
      */
-    public function __invoke(Sales $sales, Product $product, Carbon $date): Collection
+    public function __invoke(Carbon $date): Collection
     {
-        $ids = $sales->query()
+        $ids = Sales::query()
             ->whereDate('dateTime', '=', $date)
             ->pluck('product_id');
 
-        return $product->query()
+        return Product::query()
             ->whereIn('id', $ids)
             ->get();
     }

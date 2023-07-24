@@ -1,0 +1,35 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/cache@v3
+      with:
+        path: /tmp/composer-cache
+        key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+    - uses: php-actions/composer@v6 # or alternative dependency management
+    - uses: php-actions/phpstan@v3
+      with:
+        configuration: phpstan.neon
+        memory_limit: 256M
+    - name: Setup Laravel
+      run: |
+        cp .env.example .env
+        php artisan key:generate
+    - name: "laravel-pint"
+      uses: aglipanci/laravel-pint-action@2.0.0
+      with:
+        verboseMode: true
+        testMode: true
+        configPath: "pint.json"
+        pintVersion: 1.10.4
+    - name: Test
+      uses: php-actions/phpunit@v3
+      with:
+        configuration: "phpunit.xml"
+        memory_limit: "256M"

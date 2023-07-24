@@ -14,7 +14,7 @@ docker run --rm \
     composer install --ignore-platform-reqs
 
 # Laravel SetUp
-cp .env.exsample .env
+cp .env.example .env
 ./vender/bin/sail php artisan key:generate
 ```
 

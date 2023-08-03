@@ -111,57 +111,77 @@ components:
       value:
         - id: 1
           store: "All"
-          value: 15000
+          value: 12500
           products:
-            - id: 91
-              name: "キャベツ"
-              price: 200
-              quantity: 20
-              total: 4000
-            - id: 92
-              name: "トマト"
+            - id: 101
+              name: "りんご"
               price: 150
+              quantity: 35
+              total: 5250
+            - id: 102
+              name: "みかん"
+              price: 100
+              quantity: 50
+              total: 5000
+            - id: 103
+              name: "バナナ"
+              price: 80
+              quantity: 25
+              total: 2000
+            - id: 104
+              name: "パイナップル"
+              price: 200
               quantity: 10
+              total: 2000
+            - id: 105
+              name: "イチゴ"
+              price: 300
+              quantity: 5
               total: 1500
         - id: 2
           store: "ABCマート"
           value: 5000
           products:
             - id: 101
-              name: "キャベツ"
-              price: 200
-              quantity: 20
-              total: 4000
-            - id: 102
-              name: "トマト"
+              name: "りんご"
               price: 150
-              quantity: 10
-              total: 1500
+              quantity: 20
+              total: 3000
+            - id: 102
+              name: "みかん"
+              price: 100
+              quantity: 30
+              total: 3000
+            - id: 103
+              name: "バナナ"
+              price: 80
+              quantity: 25
+              total: 2000
         - id: 3
           store: "XYZショップ"
-          value: 3000
+          value: 4000
           products:
-            - id: 201
-              name: "じゃがいも"
-              price: 100
-              quantity: 25
-              total: 2500
-            - id: 202
+            - id: 101
               name: "りんご"
-              price: 120
-              quantity: 5
-              total: 600
+              price: 150
+              quantity: 15
+              total: 2250
+            - id: 104
+              name: "パイナップル"
+              price: 200
+              quantity: 10
+              total: 2000
         - id: 4
           store: "あいう商店"
-          value: 7000
+          value: 3500
           products:
-            - id: 301
+            - id: 102
               name: "みかん"
-              price: 80
-              quantity: 50
-              total: 4000
-            - id: 302
-              name: "バナナ"
-              price: 90
-              quantity: 30
-              total: 2700
+              price: 100
+              quantity: 20
+              total: 2000
+            - id: 105
+              name: "イチゴ"
+              price: 300
+              quantity: 5
+              total: 1500

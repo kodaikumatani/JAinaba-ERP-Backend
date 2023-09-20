@@ -3,6 +3,7 @@ JAinaba ERP は、JA鳥取イナバグループの直売所に商品を出荷し
 Backendでは、APIとBatchを提供します。
 
 ## Overview
+- [ER図](./docs/er_diagram.md)
 - [ユースケース図](./docs/usecase_diagram.md)
 - [シーケンス図](./docs/er_diagram.md)
 

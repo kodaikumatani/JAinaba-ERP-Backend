@@ -7,7 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Product extends Model
 {
     use HasFactory;
 
@@ -17,7 +17,17 @@ class User extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'producer_code',
         'name',
+        'price',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'name' => 'string',
+        'price' => 'integer',
     ];
 }
